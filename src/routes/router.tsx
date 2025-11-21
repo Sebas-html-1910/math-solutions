@@ -1,10 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
+import Layout from "../layout";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Error404 from "../components/Error404";
+import FunctionsLayout from "../pages/FunctionsLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "/about", element: <About /> },
+      {
+        path: "/funcs",
+        element: <FunctionsLayout />,
+      },
+    ],
+    errorElement: <Error404 />,
   },
 ]);
 
