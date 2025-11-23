@@ -2,9 +2,11 @@
 
 [✅] Migración a TypeScript: Refactorizar todos los archivos .js a .ts o .tsx.
 
-[] Instalación de Precisión: Instalar y configurar una librería de precisión numérica (Decimal.js).
+[✅] Instalación de Precisión: Instalar y configurar una librería de precisión numérica (Decimal.js).
 
-[] Pruebas Unitarias: Crear la configuración de Vitest/Jest e iniciar el testing de las funciones base.
+[✅] Crear la configuración de Vitest/Jest
+
+[] Iniciar el testing de las funciones base.
 
 2. ➕ Funcionalidades Nuevas (NUEVO)
 
@@ -24,14 +26,12 @@
 
 [] Manejo de Errores: Implementar validaciones para:
 
-[] División por cero.
+    [] División por cero.
 
-[] Raíz cuadrada de números negativos (en el dominio real).
+    [] Raíz cuadrada de números negativos (en el dominio real).
 
-[] Entrada de texto donde se espera un número.
+    [] Entrada de texto donde se espera un número.
 
-[] Optimización con Web Workers: Mover los cálculos intensivos a Web Workers para evitar el bloqueo del thread principal.
+    [] Optimización con Web Workers: Mover los cálculos intensivos a Web Workers para evitar el bloqueo del thread principal.
 
-[] Persistencia: Implementar el guardado del historial de cálculos en el localStorage del navegador.
-
-[] Mejora del Linter: Configurar reglas estrictas de ESLint y Prettier para mantener la consistencia del código.
+    [] Persistencia: Implementar el guardado del historial de cálculos en el localStorage del navegador.

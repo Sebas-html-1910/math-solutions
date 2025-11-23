@@ -20,74 +20,87 @@ export const FUNCTIONS_BOXES: FunctionsBox[] = [
   {
     functionName: "Calculator",
     boxIcon: <FontAwesomeIcon icon={faCalculator} />,
+    path: "/calculator",
     funcId: 1,
   },
   {
     functionName: "Multiplication Tables",
     boxIcon: <FontAwesomeIcon icon={faTimes} />,
+    path: "/multiplicationTables",
     funcId: 2,
   },
   {
     functionName: "Raising",
     boxIcon: <FontAwesomeIcon icon={faSuperscript} />,
+    path: "/raising",
     funcId: 3,
   },
   {
     functionName: "Derivatives",
     boxIcon: <FontAwesomeIcon icon={faPencilRuler} />,
+    path: "/derivatives",
     funcId: 4,
   },
   {
     functionName: "Integral",
     boxIcon: <FontAwesomeIcon icon={faInfinity} />,
+    path: "/integral",
     funcId: 5,
   },
-  // Graficación
+
   {
     functionName: "Graphics",
     boxIcon: <FontAwesomeIcon icon={faChartArea} />,
+    path: "/graphics",
     funcId: 6,
   },
-  // Matrices
+
   {
     functionName: "Arrays",
     boxIcon: <FontAwesomeIcon icon={faBorderAll} />,
+    path: "/arrays",
     funcId: 7,
   },
-  // Fraction Operations
+
   {
     functionName: "Length",
     boxIcon: <FontAwesomeIcon icon={faRulerHorizontal} />,
+    path: "/length",
     funcId: 8,
   },
-  // Fraction Converter
+
   {
     functionName: "Fraction Converter",
     boxIcon: <FontAwesomeIcon icon={faExchangeAlt} />,
+    path: "/fractionConverter",
     funcId: 9,
   },
-  // Simplify Fraction
+
   {
     functionName: "Simplify Fraction",
     boxIcon: <FontAwesomeIcon icon={faCut} />,
+    path: "/simplifyFraction",
     funcId: 10,
   },
-  // Mass
+
   {
     functionName: "Mass",
     boxIcon: <FontAwesomeIcon icon={faWeightHanging} />,
+    path: "/mass",
     funcId: 11,
   },
-  // Time
+
   {
     functionName: "Time",
     boxIcon: <FontAwesomeIcon icon={faClock} />,
+    path: "/time",
     funcId: 12,
   },
 
   {
     functionName: "Fraction Operations",
     boxIcon: <FontAwesomeIcon icon={faDivide} />,
+    path: "/fractionOperations",
     funcId: 13,
   },
 ];

@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Error404 from "../components/Error404";
 import FunctionsLayout from "../pages/FunctionsLayout";
+import Function from "../components/Function";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       {
         path: "/funcs",
         element: <FunctionsLayout />,
+        children: [{ path: ":funcName", element: <Function /> }],
       },
     ],
     errorElement: <Error404 />,
