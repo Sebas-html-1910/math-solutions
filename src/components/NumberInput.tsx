@@ -3,7 +3,7 @@ export default function NumberInput({
   value,
   name,
 }: {
-  isError?: boolean;
+  isError?: boolean | string | null;
   value?: string;
   name?: string;
 }) {
@@ -15,6 +15,8 @@ export default function NumberInput({
         type="number"
         placeholder="Enter a number"
         className="border-2 border-gray-400 px-2 py-2 rounded-md focus:outline-none focus:border-main w-full md:text-xl text-sm"
+        min={1}
+        max={100000}
       />
       {isError && <p className="text-red-500">The input is invalid</p>}
     </div>
