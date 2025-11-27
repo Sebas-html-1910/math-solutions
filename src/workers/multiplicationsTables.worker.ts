@@ -1,10 +1,7 @@
-self.onmessage = (e: MessageEvent<number>) => {
-  const n = e.data;
-  const res = [];
+import multiplicationTables from "../services/multiplicationTables";
 
-  for (let i = 1; i <= 10; i++) {
-    res.push(i * n);
-  }
+self.onmessage = (e: MessageEvent<number>) => {
+  const res = multiplicationTables(e.data);
 
   self.postMessage(res);
 };

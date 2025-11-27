@@ -20,6 +20,8 @@
 
 [] Conversor de Unidades: Crear un módulo para la conversión entre sistemas de unidades.
 
+[] Agregar las funciones ya existentes
+
 3. 🎯 Calidad de Código y UX (MEJORA)
 
 [] Renderizado de Fórmulas: Integrar KaTeX para mostrar el output de las soluciones con notación matemática estándar.
@@ -30,8 +32,6 @@
 
     [] Raíz cuadrada de números negativos (en el dominio real).
 
-    [] Entrada de texto donde se espera un número.
-
-    [] Optimización con Web Workers: Mover los cálculos intensivos a Web Workers para evitar el bloqueo del thread principal.
+    [✅] Optimización con Web Workers: Mover los cálculos intensivos a Web Workers para evitar el bloqueo del thread principal.
 
     [] Persistencia: Implementar el guardado del historial de cálculos en el localStorage del navegador.
