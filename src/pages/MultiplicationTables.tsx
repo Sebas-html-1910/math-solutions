@@ -2,8 +2,10 @@ import { useState, useEffect, useRef, type FormEvent } from "react";
 import NumberInput from "../components/NumberInput";
 
 export default function MultiplicationTables() {
-  const [inputVal, setInputVal] = useState<number | null>(null);
-  const [tableResults, setTableResults] = useState<number[]>([]);
+  const [inputVal, setInputVal] = useState<number>(1);
+  const [tableResults, setTableResults] = useState<number[]>([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  ]);
   const workerRef = useRef<Worker | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
@@ -23,7 +25,7 @@ export default function MultiplicationTables() {
   }, []);
 
   useEffect(() => {
-    if (inputVal !== null && workerRef.current) {
+    if (workerRef.current) {
       workerRef.current.postMessage(inputVal);
     }
   }, [inputVal]);
@@ -71,8 +73,7 @@ export default function MultiplicationTables() {
       </form>
       <div className="w-2/6 flex justify-center items-center">
         <ul>
-          {inputVal !== null &&
-            tableResults.length > 0 &&
+          {tableResults.length > 0 &&
             renderMultiplicationTables(inputVal, tableResults)}
         </ul>
       </div>

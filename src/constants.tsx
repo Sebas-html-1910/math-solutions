@@ -2,7 +2,6 @@ import {
   faCalculator,
   faInfinity,
   faPencilRuler,
-  faSuperscript,
   faTimes,
   faChartArea,
   faBorderAll,
@@ -28,12 +27,6 @@ export const FUNCTIONS_BOXES: FunctionsBox[] = [
     boxIcon: <FontAwesomeIcon icon={faTimes} />,
     path: "/multiplicationTables",
     funcId: 2,
-  },
-  {
-    functionName: "Raising",
-    boxIcon: <FontAwesomeIcon icon={faSuperscript} />,
-    path: "/raising",
-    funcId: 3,
   },
   {
     functionName: "Derivatives",

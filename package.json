@@ -15,6 +15,8 @@
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.0",
     "@tailwindcss/vite": "^4.1.17",
+    "@types/convert-units": "^2.3.12",
+    "convert-units": "^2.3.4",
     "decimal.js": "^10.6.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

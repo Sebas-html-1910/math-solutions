@@ -1,10 +1,12 @@
 export default function NumberInput({
   isError,
   value,
+  defaultValue,
   name,
 }: {
   isError?: boolean | string | null;
   value?: string;
+  defaultValue?: string;
   name?: string;
 }) {
   return (
@@ -12,6 +14,7 @@ export default function NumberInput({
       <input
         name={name}
         value={value}
+        defaultValue={defaultValue}
         type="number"
         placeholder="Enter a number"
         className="border-2 border-gray-400 px-2 py-2 rounded-md focus:outline-none focus:border-main w-full md:text-xl text-sm"
