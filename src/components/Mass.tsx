@@ -1,40 +1,14 @@
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import NumberInput from "../components/NumberInput";
 
-export default function Length() {
+export default function Mass() {
   const [inputFromVal, setInputFromVal] = useState<number | null>(null);
   const [inputFromUnit, setInputFromUnit] = useState<string | null>(null);
   const [inputToUnit, setInputToUnit] = useState<string | null>(null);
   const [result, setResult] = useState<null | { n: number; unit: string }>(
     null
   );
-  const workerRef = useRef<Worker | null>(null);
   const [err, setErr] = useState<string | null>(null);
-
-  useEffect(() => {
-    workerRef.current = new Worker(
-      new URL("../workers/length.worker.ts", import.meta.url),
-      { type: "module" }
-    );
-
-    workerRef.current.onmessage = (e) => {
-      setResult(e.data);
-    };
-
-    return () => {
-      workerRef.current?.terminate();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (workerRef.current) {
-      workerRef.current.postMessage({
-        inputFromVal,
-        inputFromUnit,
-        inputToUnit,
-      });
-    }
-  }, [inputFromVal, inputFromUnit, inputToUnit]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -73,27 +47,21 @@ export default function Length() {
           className="border-2 border-gray-400 px-2 py-2 rounded-md focus:outline-none focus:border-main md:text-xl text-sm"
           name="inputFromUnit"
         >
-          <option value="m">m</option>
-          <option value="km">km</option>
-          <option value="hm">hm</option>
-          <option value="dam">dam</option>
-          <option value="dm">dm</option>
-          <option value="cm">cm</option>
-          <option value="mm">mm</option>
-          <option value="ft">ft</option>
+          <option value="kg">kg</option>
+          <option value="g">g</option>
+          <option value="mg">mg</option>
+          <option value="lb">lb</option>
+          <option value="oz">oz</option>
         </select>
         <select
           className="border-2 border-gray-400 px-2 py-2 rounded-md focus:outline-none focus:border-main md:text-xl text-sm"
           name="inputToUnit"
         >
-          <option value="km">km</option>
-          <option value="hm">hm</option>
-          <option value="dam">dam</option>
-          <option value="m">m</option>
-          <option value="dm">dm</option>
-          <option value="cm">cm</option>
-          <option value="mm">mm</option>
-          <option value="ft">ft</option>
+          <option value="kg">kg</option>
+          <option value="g">g</option>
+          <option value="mg">mg</option>
+          <option value="lb">lb</option>
+          <option value="oz">oz</option>
         </select>
         <button
           type="submit"
