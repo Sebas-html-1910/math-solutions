@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
 import MultiplicationTables from "../pages/MultiplicationTables";
 import Length from "../pages/Length";
-import Mass from "./Mass";
+import Mass from "../pages/Mass";
+import Time from "../pages/Time";
 export default function Function() {
   const { funcName } = useParams();
 
   if (funcName === "multiplicationTables") return <MultiplicationTables />;
   if (funcName === "length") return <Length />;
   if (funcName === "mass") return <Mass />;
+  if (funcName === "time") return <Time />;
 }

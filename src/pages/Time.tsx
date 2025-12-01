@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import NumberInput from "../components/NumberInput";
 
-export default function Length() {
+export default function Time() {
   const [inputFromVal, setInputFromVal] = useState<number | null>(null);
   const [inputFromUnit, setInputFromUnit] = useState<string | null>(null);
   const [inputToUnit, setInputToUnit] = useState<string | null>(null);
   const [result, setResult] = useState<null | { n: number; unit: string }>(
     null
   );
-  const workerRef = useRef<Worker | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  const workerRef = useRef<Worker | null>(null);
 
   useEffect(() => {
     workerRef.current = new Worker(
@@ -73,27 +73,23 @@ export default function Length() {
           className="border-2 border-gray-400 px-2 py-2 rounded-md focus:outline-none focus:border-main md:text-xl text-sm"
           name="inputFromUnit"
         >
-          <option value="m">m</option>
-          <option value="km">km</option>
-          <option value="hm">hm</option>
-          <option value="dam">dam</option>
-          <option value="dm">dm</option>
-          <option value="cm">cm</option>
-          <option value="mm">mm</option>
-          <option value="ft">ft</option>
+          <option value="s">seg</option>
+          <option value="h">h</option>
+          <option value="min">min</option>
+          <option value="d">day</option>
+          <option value="month">month</option>
+          <option value="year">year</option>
         </select>
         <select
           className="border-2 border-gray-400 px-2 py-2 rounded-md focus:outline-none focus:border-main md:text-xl text-sm"
           name="inputToUnit"
         >
-          <option value="km">km</option>
-          <option value="hm">hm</option>
-          <option value="dam">dam</option>
-          <option value="m">m</option>
-          <option value="dm">dm</option>
-          <option value="cm">cm</option>
-          <option value="mm">mm</option>
-          <option value="ft">ft</option>
+          <option value="s">seg</option>
+          <option value="h">h</option>
+          <option value="min">min</option>
+          <option value="d">day</option>
+          <option value="month">month</option>
+          <option value="year">year</option>
         </select>
         <button
           type="submit"

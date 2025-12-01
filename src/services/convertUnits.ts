@@ -9,6 +9,5 @@ export default function convertUnits(
   if (typeof inputFromVal !== "number" || !inputFromUnit || !inputToUnit) {
     return null;
   }
-
   return convert(inputFromVal).from(inputFromUnit).to(inputToUnit);
 }

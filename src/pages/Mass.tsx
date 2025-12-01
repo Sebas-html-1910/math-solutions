@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import NumberInput from "../components/NumberInput";
 
 export default function Mass() {
@@ -9,6 +9,32 @@ export default function Mass() {
     null
   );
   const [err, setErr] = useState<string | null>(null);
+  const workerRef = useRef<Worker | null>(null);
+
+  useEffect(() => {
+    workerRef.current = new Worker(
+      new URL("../workers/convertUnits.worker.ts", import.meta.url),
+      { type: "module" }
+    );
+
+    workerRef.current.onmessage = (e) => {
+      setResult(e.data);
+    };
+
+    return () => {
+      workerRef.current?.terminate();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (workerRef.current) {
+      workerRef.current.postMessage({
+        inputFromVal,
+        inputFromUnit,
+        inputToUnit,
+      });
+    }
+  }, [inputFromVal, inputFromUnit, inputToUnit]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -47,8 +73,8 @@ export default function Mass() {
           className="border-2 border-gray-400 px-2 py-2 rounded-md focus:outline-none focus:border-main md:text-xl text-sm"
           name="inputFromUnit"
         >
-          <option value="kg">kg</option>
           <option value="g">g</option>
+          <option value="kg">kg</option>
           <option value="mg">mg</option>
           <option value="lb">lb</option>
           <option value="oz">oz</option>
