@@ -18,6 +18,7 @@
     "@types/convert-units": "^2.3.12",
     "convert-units": "^2.3.4",
     "decimal.js": "^10.6.0",
+    "fraction.js": "^5.3.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",

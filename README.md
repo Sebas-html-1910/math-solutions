@@ -1,14 +1,4 @@
-1. ⚙️ Cimientos y Estructura (CRÍTICO)
-
-[✅] Migración a TypeScript: Refactorizar todos los archivos .js a .ts o .tsx.
-
-[✅] Instalación de Precisión: Instalar y configurar una librería de precisión numérica (Decimal.js).
-
-[✅] Crear la configuración de Vitest/Jest
-
-[] Iniciar el testing de las funciones base.
-
-2. ➕ Funcionalidades Nuevas (NUEVO)
+1. ➕ Funcionalidades Nuevas (NUEVO)
 
 [] Módulo de Graficación: Integrar la librería de gráficos (ej. Plotly) y crear un componente de visualización.
 
@@ -18,11 +8,11 @@
 
 [] Operaciones con Matrices: Agregar funciones para el cálculo de determinantes, inversas y multiplicación de matrices.
 
-[] Conversor de Unidades: Crear un módulo para la conversión entre sistemas de unidades.
+[✅] Conversor de Unidades: Crear un módulo para la conversión entre sistemas de unidades.
 
 [] Agregar las funciones ya existentes
 
-3. 🎯 Calidad de Código y UX (MEJORA)
+2. 🎯 Calidad de Código y UX (MEJORA)
 
 [] Renderizado de Fórmulas: Integrar KaTeX para mostrar el output de las soluciones con notación matemática estándar.
 

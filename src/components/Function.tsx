@@ -6,8 +6,17 @@ import Time from "../pages/Time";
 export default function Function() {
   const { funcName } = useParams();
 
-  if (funcName === "multiplicationTables") return <MultiplicationTables />;
-  if (funcName === "length") return <Length />;
-  if (funcName === "mass") return <Mass />;
-  if (funcName === "time") return <Time />;
+  switch (funcName) {
+    case "multiplicationTables":
+      return <MultiplicationTables />;
+    case "length":
+      return <Length />;
+    case "mass":
+      return <Mass />;
+    case "time":
+      return <Time />;
+
+    default:
+      break;
+  }
 }

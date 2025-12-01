@@ -56,13 +56,6 @@ export const FUNCTIONS_BOXES: FunctionsBox[] = [
   },
 
   {
-    functionName: "Length",
-    boxIcon: <FontAwesomeIcon icon={faRulerHorizontal} />,
-    path: "/length",
-    funcId: 8,
-  },
-
-  {
     functionName: "Fraction Converter",
     boxIcon: <FontAwesomeIcon icon={faExchangeAlt} />,
     path: "/fractionConverter",
@@ -70,17 +63,17 @@ export const FUNCTIONS_BOXES: FunctionsBox[] = [
   },
 
   {
+    functionName: "Length",
+    boxIcon: <FontAwesomeIcon icon={faRulerHorizontal} />,
+    path: "/length",
+    funcId: 8,
+  },
+
+  {
     functionName: "Simplify Fraction",
     boxIcon: <FontAwesomeIcon icon={faCut} />,
     path: "/simplifyFraction",
     funcId: 10,
-  },
-
-  {
-    functionName: "Mass",
-    boxIcon: <FontAwesomeIcon icon={faWeightHanging} />,
-    path: "/mass",
-    funcId: 11,
   },
 
   {
@@ -95,5 +88,12 @@ export const FUNCTIONS_BOXES: FunctionsBox[] = [
     boxIcon: <FontAwesomeIcon icon={faDivide} />,
     path: "/fractionOperations",
     funcId: 13,
+  },
+
+  {
+    functionName: "Mass",
+    boxIcon: <FontAwesomeIcon icon={faWeightHanging} />,
+    path: "/mass",
+    funcId: 11,
   },
 ];
