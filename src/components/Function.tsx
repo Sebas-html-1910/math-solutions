@@ -3,6 +3,7 @@ import MultiplicationTables from "../pages/MultiplicationTables";
 import Length from "../pages/Length";
 import Mass from "../pages/Mass";
 import Time from "../pages/Time";
+import FractionOperations from "../pages/FractionOperations";
 export default function Function() {
   const { funcName } = useParams();
 
@@ -15,6 +16,8 @@ export default function Function() {
       return <Mass />;
     case "time":
       return <Time />;
+    case "fractionOperations":
+      return <FractionOperations />;
 
     default:
       break;
