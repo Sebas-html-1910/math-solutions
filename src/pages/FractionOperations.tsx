@@ -8,6 +8,7 @@ export default function FractionOperations() {
   const [num2, setNum2] = useState<number | null>(null);
   const [den2, setDen2] = useState<number | null>(null);
   const [result, setResult] = useState<null | { n: number; d: number }>(null);
+  const [err, setErr] = useState<string | null>(null);
 
   const workerRef = useRef<Worker | null>(null);
 
@@ -45,9 +46,36 @@ export default function FractionOperations() {
     const op = formData.get("operation");
 
     if (!n1 || !d1 || !n2 || !d2 || !op) {
+      setErr("All fields are required");
       return;
     }
 
+    if (Number(d1) === 0 || Number(d2) === 0) {
+      setErr("Denominator cannot be zero");
+      return;
+    }
+
+    if (
+      n1.toString().includes(".") ||
+      d1.toString().includes(".") ||
+      n2.toString().includes(".") ||
+      d2.toString().includes(".")
+    ) {
+      setErr("Invalid Input");
+      return;
+    }
+
+    if (
+      n1.toString().includes("e") ||
+      d1.toString().includes("e") ||
+      n2.toString().includes("e") ||
+      d2.toString().includes("e")
+    ) {
+      setErr("Invalid Input");
+      return;
+    }
+
+    setErr(null);
     setNum1(Number(n1));
     setDen1(Number(d1));
     setNum2(Number(n2));
@@ -90,14 +118,24 @@ export default function FractionOperations() {
 
       <div className="w-fill md:text-3xl text-xl flex flex-col justify-center items-center gap-2">
         <span className="text-main font-extrabold">Result: </span>
-        {result && !isNaN(result.d) ? (
-          <>
-            <output>{result ? result.n : "?"}</output>
-            <div className="w-full border border-main"></div>
-            <output>{result ? result.d : "?"}</output>
-          </>
+
+        {result ? (
+          !isNaN(result.d) ? (
+            <>
+              <output>{result ? result.n : "?"}</output>
+              <div className="w-full border border-main"></div>
+              <output>{result ? result.d : "?"}</output>
+            </>
+          ) : (
+            <output>{result?.n}</output>
+          )
         ) : (
-          <output>{result?.n}</output>
+          "?"
+        )}
+        {err ? (
+          <span className="text-red-500 md:text-2xl text-xl">{err}</span>
+        ) : (
+          ""
         )}
       </div>
     </section>

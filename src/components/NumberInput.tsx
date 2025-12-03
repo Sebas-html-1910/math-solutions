@@ -4,12 +4,14 @@ export default function NumberInput({
   defaultValue,
   fraction,
   name,
+  decimal,
 }: {
   isError?: boolean | string | null;
   value?: string;
   defaultValue?: string;
   name?: string;
   fraction?: boolean;
+  decimal?: boolean;
 }) {
   return (
     <div
@@ -35,7 +37,8 @@ export default function NumberInput({
             ? "border-red-500 focus:border-red-600"
             : "border-gray-400 focus:border-main"
         }`}
-        min={1}
+        step={decimal ? "any" : "1"}
+        min={decimal ? undefined : 1}
         max={100000}
       />
     </div>
