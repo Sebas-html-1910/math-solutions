@@ -74,7 +74,11 @@ export default function ConvertFraction() {
             <output>{result?.n}</output>
           )
         ) : (
-          "?"
+          <>
+            <p>
+              <span className="text-main font-extrabold">Result: </span> ?
+            </p>
+          </>
         )}
       </div>
     </section>
