@@ -5,6 +5,7 @@ import Mass from "../pages/Mass";
 import Time from "../pages/Time";
 import FractionOperations from "../pages/FractionOperations";
 import ConvertFraction from "../pages/ConvertFraction";
+import SimplifyFraction from "../pages/simplifyFraction";
 export default function Function() {
   const { funcName } = useParams();
 
@@ -21,6 +22,8 @@ export default function Function() {
       return <FractionOperations />;
     case "fractionConverter":
       return <ConvertFraction />;
+    case "simplifyFraction":
+      return <SimplifyFraction />;
 
     default:
       return (

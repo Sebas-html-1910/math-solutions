@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* 
+  Purple : #ad46ff 
+  Blue : #79f
+*/
+
 @theme {
   --color-main: #ad46ff;
 }
