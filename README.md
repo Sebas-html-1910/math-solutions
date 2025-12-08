@@ -8,10 +8,6 @@
 
 [] Operaciones con Matrices: Agregar funciones para el cálculo de determinantes, inversas y multiplicación de matrices.
 
-[✅] Conversor de Unidades: Crear un módulo para la conversión entre sistemas de unidades.
-
-[] Agregar las funciones ya existentes
-
 2. 🎯 Calidad de Código y UX (MEJORA)
 
 [] Renderizado de Fórmulas: Integrar KaTeX para mostrar el output de las soluciones con notación matemática estándar.
@@ -21,7 +17,5 @@
     [] División por cero.
 
     [] Raíz cuadrada de números negativos (en el dominio real).
-
-    [✅] Optimización con Web Workers: Mover los cálculos intensivos a Web Workers para evitar el bloqueo del thread principal.
 
     [] Persistencia: Implementar el guardado del historial de cálculos en el localStorage del navegador.
